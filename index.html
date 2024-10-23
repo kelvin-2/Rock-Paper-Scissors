@@ -3,9 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-    <script src="/script.js"> </script>
+    <script>
+        function getComputerChoice() {
+            var things = ['rock', 'paper', 'scissors'];
+            return things[Math.floor(Math.random() * things.length)];
+        }
+        function calculateWinner(userChoice, pcChoice) {
+            if (userChoice === pcChoice) {
+                return "It's a tie!";
+            } else if ((userChoice === "rock" && pcChoice === "scissors") ||
+                       (userChoice === "scissors" && pcChoice === "paper") ||
+                       (userChoice === "paper" && pcChoice === "rock")) {
+                return "You win!";
+            } else {
+                return "PC wins!";
+            }
+        }
+        function playGame() {
+           
+            var userChoice = prompt("Enter your choice: rock, paper, or scissors").toLowerCase();
+            var pcChoice = getComputerChoice();
+            var result = calculateWinner(userChoice, pcChoice);
+            alert("You chose: " + userChoice + "\nPC chose: " + pcChoice + "\nResult: " + result);
+        }
+        playGame();
+    </script>
 </body>
 </html>
