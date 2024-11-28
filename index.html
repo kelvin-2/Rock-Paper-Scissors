@@ -3,33 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, Paper</title>
+    <title>Rock, Paper Sicerso</title>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
-    <script>
-        function getComputerChoice() {
-            var things = ['rock', 'paper', 'scissors'];
-            return things[Math.floor(Math.random() * things.length)];
-        }
-        function calculateWinner(userChoice, pcChoice) {
-            if (userChoice === pcChoice) {
-                return "It's a tie!";
-            } else if ((userChoice === "rock" && pcChoice === "scissors") ||
-                       (userChoice === "scissors" && pcChoice === "paper") ||
-                       (userChoice === "paper" && pcChoice === "rock")) {
-                return "You win!";
-            } else {
-                return "PC wins!";
-            }
-        }
-        function playGame() {
-           
-            var userChoice = prompt("Enter your choice: rock, paper, or scissors").toLowerCase();
-            var pcChoice = getComputerChoice();
-            var result = calculateWinner(userChoice, pcChoice);
-            alert("You chose: " + userChoice + "\nPC chose: " + pcChoice + "\nResult: " + result);
-        }
-        playGame();
-    </script>
+    <h1>Rock-PAPER-SCISSORS</h1> 
+    <div id="choices">
+        <button onclick="playGame('rock')">👊🏿</button>
+        <button onclick="playGame('paper')">🤚🏿</button>
+        <button onclick="playGame('scissors')">✌🏿</button>
+    </div>
+    <div id="playerDisplay">Player:</div>
+    <div id="computerDisplay">Player:</div>
+    <div id="resultDisplay">Its a tie</div>
+
+    <script src="script.js"></script>
+    
 </body>
 </html>
